@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maricar Buhay - Digital Business Card</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Clean External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-body">
+
+    <div class="card-container">
+        <!-- Main Card Container -->
+        <div class="glass-card">
+            
+            <!-- Glow Effect Elements (Pink Theme) -->
+            <div class="glow-effect glow-top-left"></div>
+            <div class="glow-effect glow-bottom-right"></div>
+
+            <!-- Business Switcher Tabs -->
+            <div class="switcher-container">
+                <button id="btnChef" class="switch-btn active" onclick="switchBusiness('chef')">The Chef by Rico</button>
+                <button id="btnKahts" class="switch-btn" onclick="switchBusiness('kahts')">Kaht's Properties</button>
+            </div>
+
+            <!-- Header Title -->
+            <h2 id="businessSubtitle" class="card-header-title">THE CHEF BY RICO</h2>
+
+            <!-- Image Logo Placeholder (Sagad at Pabilog) -->
+            <div class="image-wrapper">
+                <div class="image-border">
+                    <img src="logo.png" alt="Maricar Buhay Logo" class="profile-img">
+                </div>
+            </div>
+
+            <!-- Name and Title -->
+            <h1 class="profile-name">Maricar Buhay</h1>
+            <p class="profile-title">Entrepreneur / Owner</p>
+
+            <!-- Contact Links Section -->
+            <div class="links-section">
+                <p class="section-label">Connect with us</p>
+                
+                <!-- Phone Number Link -->
+                <a href="tel:09626244520" class="contact-link">
+                    <div class="link-content">
+                        <div class="icon-box"><i class="fas fa-phone"></i></div>
+                        <div class="link-text-group">
+                            <span class="link-category">Phone Number</span>
+                            <span class="link-username">0962 624 4520</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-arrow-right link-arrow"></i>
+                </a>
+
+                <!-- WhatsApp Link -->
+                <a href="https://wa.me/639626244520" target="_blank" class="contact-link">
+                    <div class="link-content">
+                        <div class="icon-box"><i class="fab fa-whatsapp"></i></div>
+                        <div class="link-text-group">
+                            <span class="link-category">WhatsApp</span>
+                            <span class="link-username">0962 624 4520</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-arrow-right link-arrow"></i>
+                </a>
+
+                <!-- Viber Link -->
+
+                <a href="viber://chat?number=%2B639626244520" onclick="handleViberClick(event)" class="contact-link">
+                    <div class="link-content">
+                        <div class="icon-box"><i class="fab fa-viber"></i></div>
+                        <div class="link-text-group">
+                            <span class="link-category">Viber</span>
+                            <span class="link-username">0962 624 4520</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-arrow-right link-arrow"></i>
+                </a>
+
+                <!-- Telegram Link -->
+                <a href="https://t.me/+639626244520" target="_blank" class="contact-link">
+                    <div class="link-content">
+                        <div class="icon-box"><i class="fab fa-telegram-plane"></i></div>
+                        <div class="link-text-group">
+                            <span class="link-category">Telegram</span>
+                            <span class="link-username">0962 624 4520</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-arrow-right link-arrow"></i>
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:buhaymaricar10@gmail.com" id="emailLink" class="contact-link">
+                    <div class="link-content">
+                        <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                        <div class="link-text-group">
+                            <span class="link-category">Email Address</span>
+                            <span class="link-username">buhaymaricar10@gmail.com</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-arrow-right link-arrow"></i>
+                </a>
+
+                <!-- Business FB Page (Dynamic) -->
+                <a id="fbPageLink" href="https://www.facebook.com/" target="_blank" class="contact-link">
+                    <div class="link-content">
+                        <div class="icon-box"><i class="fab fa-facebook-f"></i></div>
+                        <div class="link-text-group">
+                            <span class="link-category">Business Facebook Page</span>
+                            <span id="fbPageText" class="link-username">The Chef by Rico</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-arrow-right link-arrow"></i>
+                </a>
+
+                <!-- Personal FB -->
+                <a href="https://www.facebook.com/maricar.buhay" target="_blank" class="contact-link">
+                    <div class="link-content">
+                        <div class="icon-box"><i class="fas fa-user"></i></div>
+                        <div class="link-text-group">
+                            <span class="link-category">Facebook Profile</span>
+                            <span class="link-username">Maricar Khar Epralag</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-arrow-right link-arrow"></i>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/maricarbuhay/" target="_blank" class="contact-link">
+                    <div class="link-content">
+                        <div class="icon-box"><i class="fab fa-instagram"></i></div>
+                        <div class="link-text-group">
+                            <span class="link-category">Instagram</span>
+                            <span class="link-username">@maricarbuhay</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-arrow-right link-arrow"></i>
+                </a>
+            </div>
+
+            <!-- Save Contact Button (Bottom) -->
+            <button id="saveContactBtn" class="save-btn">
+                <i class="fas fa-user-plus btn-icon"></i>
+                <span>Save Contact</span>
+            </button>
+
+            <!-- Footer Note -->
+            <p id="footerNote" class="footer-note">The Chef by Rico</p>
+
+        </div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
