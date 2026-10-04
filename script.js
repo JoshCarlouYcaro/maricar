@@ -1,15 +1,17 @@
 const businessData = {
     chef: {
         subtitle: "THE CHEF BY RICO",
+        logo: "cheflogo.png", // Palitan mo ng totoong filename ng logo para sa Chef
         fbPageName: "The Chef by Rico",
-        fbUrl: "https://www.facebook.com/profile.php?id=61594459323090", // Palitan ng totoong link kung gusto mo
+        fbUrl: "https://www.facebook.com/profile.php?id=61594459323090",
         footer: "Shine. Protect. Impress."
     },
     kahts: {
-        subtitle: "KAHT'S PROPERTIES",
-        fbPageName: "Kaht's Properties",
-        fbUrl: "https://www.facebook.com/maricar.buhay", // Palitan ng totoong link kung gusto mo
-        footer: "Kaht's Properties"
+        subtitle: "KHAR'S PROPERTIES",
+        logo: "logo.png", // Palitan mo ng totoong filename ng logo para sa Khar's Properties
+        fbPageName: "Khar's Properties",
+        fbUrl: "https://www.facebook.com/maricar.buhay",
+        footer: "Khar's Properties"
     }
 };
 
@@ -20,13 +22,13 @@ function switchBusiness(type) {
     document.getElementById('btnChef').classList.toggle('active', type === 'chef');
     document.getElementById('btnKahts').classList.toggle('active', type === 'kahts');
 
-    // Baguhin ang header at Facebook details
+    // Baguhin ang header, logo, at iba pang details
     document.getElementById('businessSubtitle').innerText = data.subtitle;
+    document.getElementById('logoImg').src = data.logo; // <--- Dito nagpapalit ang image kusa
     document.getElementById('fbPageText').innerText = data.fbPageName;
     document.getElementById('fbPageLink').href = data.fbUrl;
     document.getElementById('footerNote').innerText = data.footer;
 }
-
 // vCard Save Contact Handler
 document.getElementById('saveContactBtn').addEventListener('click', function(e) {
     e.preventDefault();
